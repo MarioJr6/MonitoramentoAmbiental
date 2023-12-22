@@ -34,7 +34,7 @@ url2 = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTZfjxdY8_x5WNd9_NE3QQPe
 
 # Mantendo somente as colunas que desejo trabalhar
 #colunas = ['DATA_SINTOMAS', 'CAPÃO DA CANOA', 'CAXIAS DO SUL', 'PASSO FUNDO', 
-           'SANTA MARIA', 'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
+#           'SANTA MARIA', 'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
 #grouped = grouped[colunas]
 
 # Realizando o meu filtro temporal
