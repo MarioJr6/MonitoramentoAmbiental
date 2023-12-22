@@ -28,4 +28,28 @@ grouped = grouped[colunas]
 # Realizando o meu filtro temporal
 grouped = grouped[grouped['DATA_SINTOMAS']>='2023-01-01']
 
+# Configurações da página, padrão para os dashs do setor
+st.set_page_config(
+    page_title="Demo Mario",
+    page_icon="	:snake:",
+    layout="wide",
+    initial_sidebar_state='collapsed'
+)
+col1, col2, col3 = st.columns([1,4,1])
+
+col1.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20CEVS.png', width=200)
+col2.title('Demo mario')
+col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
+
+#coluna_filtro, coluna_tabela = st.columns([1,2])
+
+
+
+
+
+
+
+
+
+
 
