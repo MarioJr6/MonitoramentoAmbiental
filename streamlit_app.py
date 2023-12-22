@@ -1,7 +1,7 @@
 import pandas as pd
 import requests
 import plotly.express as px
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import streamlit as st
