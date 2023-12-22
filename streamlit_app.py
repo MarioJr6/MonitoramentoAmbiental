@@ -5,6 +5,19 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import streamlit as st
 
+# Configurações da página, padrão para os dashs do setor
+st.set_page_config(
+    page_title="Demo Mario",
+    page_icon="	:snake:",
+    layout="wide",
+    initial_sidebar_state='collapsed'
+)
+col1, col2, col3 = st.columns([1,4,1])
+
+col1.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20CEVS.png', width=200)
+col2.title('Demo mario')
+col3.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20Estado.png', width=300)
+
 # Armazenando a url da fonte dos dados para leitura
 url = 'https://ti.saude.rs.gov.br/covid19/download'
 url2 = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTZfjxdY8_x5WNd9_NE3QQPeche-dMdY5KdvNpq8H4W-lmUTidwrKpV0uLzLtihV7UAPIl68WvugMsN/pub?gid=0&single=true&output=tsv'
@@ -27,18 +40,7 @@ grouped = grouped[colunas]
 # Realizando o meu filtro temporal
 grouped = grouped[grouped['DATA_SINTOMAS']>='2023-01-01']
 
-# Configurações da página, padrão para os dashs do setor
-st.set_page_config(
-    page_title="Demo Mario",
-    page_icon="	:snake:",
-    layout="wide",
-    initial_sidebar_state='collapsed'
-)
-col1, col2, col3 = st.columns([1,4,1])
 
-col1.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20CEVS.png', width=200)
-col2.title('Demo mario')
-col3.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20Estado.png', width=300)
 
 
 
