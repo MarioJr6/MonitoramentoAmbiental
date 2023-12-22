@@ -39,9 +39,8 @@ col1, col2, col3 = st.columns([1,4,1])
 
 col1.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20CEVS.png', width=200)
 col2.title('Demo mario')
-col3.image('https://github.com/andrejarenkow/PainelOvitrampas/blob/main/logo_estado%20(3).png?raw=true', width=300)
+col3.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20Estado.png', width=300)
 
-#coluna_filtro, coluna_tabela = st.columns([1,2])
 
 
 
