@@ -20,7 +20,7 @@ df_casos['DATA_CONFIRMACAO']=pd.to_datetime(df_casos['DATA_CONFIRMACAO'], format
 # Agrupando os dados de forma que eu tenha todas as datas do ano
 grouped = pd.pivot_table(data=df_casos, index='DATA_SINTOMAS', columns='MUNICIPIO', values='CRITERIO', aggfunc='count').fillna(0).reset_index()
 
- Mantendo somente as colunas que desejo trabalhar
+# Mantendo somente as colunas que desejo trabalhar
 colunas = ['DATA_SINTOMAS', 'CAPÃO DA CANOA', 'CAXIAS DO SUL', 'PASSO FUNDO', 
            'SANTA MARIA', 'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
 grouped = grouped[colunas]
