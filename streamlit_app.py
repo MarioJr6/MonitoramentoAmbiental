@@ -43,10 +43,49 @@ grouped = grouped[colunas]
 # Realizando o meu filtro temporal
 grouped = grouped[grouped['DATA_SINTOMAS']>='2023-01-01']
 
-# grouped
+# Filtrando os Municípios
+municipios = ['CAPÃO DA CANOA', 'CAXIAS DO SUL', 'PASSO FUNDO','SANTA MARIA', 
+              'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
+filtro_municipios = df_esgoto['Município'].isin(municipios)
+df_esgoto[filtro_municipios]
+
+# Limpeza dos dados
+df_esgoto['Data de coleta']=pd.to_datetime(df_esgoto['Data de coleta'], format='%d/%m/%Y')
+df_esgoto = df_esgoto[df_esgoto['Data de coleta']>='2023-01-01']
+
+# Formatação para o tipo float
+df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
+coluna_filtro, coluna_grafico= st.columns([1,4])
 
 
+with coluna_filtro: 
+    muni = st.selectbox('Selecione o Município desejado', sorted(df_esgoto['Município'].unique()))
+    st.write('Município selecionado:', muni)
+    
+    filtro = df_esgoto['Município'] == option
+    df_esgoto_filtrado = df_esgoto[filtro]
 
+with coluna_filtro: 
+    # Subplot para mais de um eixo Y
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+
+    # Adicionando a linha ao gráfico fig
+    fig = fig.add_trace(
+          go.Scatter(x=grouped['DATA_SINTOMAS'], y=grouped[muni], name="Casos diários", mode="lines"),
+          secondary_y=True,
+          )
+    # Adicionando a barra ao gráfico fig
+    fig = fig.add_trace(
+          go.Bar(x=df_esgoto_filtrado['Data de coleta'], y=df_esgoto_filtrado['carga_viral_n1'], name="Carga Viral no esgoto",),
+          secondary_y=False,
+          )
+    
+    # Ajustando os eixos para começarem juntos
+    fig.update_yaxes(title_text="Carga viral", secondary_y=False, range=[0,df_esgoto['carga_viral_n1'].max()*1.2])
+    fig.update_yaxes(title_text="Casos diários", secondary_y=True, range=[0,grouped['CAPÃO DA CANOA'].max()*1.2])
+
+    fig
+    
 
 
 
