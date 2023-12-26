@@ -18,7 +18,7 @@ col1.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20
 col2.title('Painel de Monitoramento Ambiental de SARS-CoV-2')
 col3.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20Estado.png?raw=true', width=300)
 
-coluna_filtro, coluna_grafico= st.columns([1,2])
+coluna_filtro, coluna_grafico = st.columns([1,2])
 
 # Armazenando a url da fonte dos dados para leitura
 url = 'https://ti.saude.rs.gov.br/covid19/download'
@@ -60,11 +60,6 @@ df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
 
 with coluna_filtro: 
     muni = st.selectbox('Selecione o Município desejado', sorted(df_esgoto['Município'].unique()))
-
-st.write('Município selecionado:', muni)
-    
-filtro = df_esgoto['Município']==muni
-df_esgoto_filtrado = df_esgoto[filtro]
 
 
 
