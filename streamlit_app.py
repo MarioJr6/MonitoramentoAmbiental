@@ -59,23 +59,4 @@ df_esgoto = df_esgoto[df_esgoto['Data de coleta']>='2023-01-01']
 df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
 
 with coluna_filtro: 
-    muni = st.selectbox('Selecione o Município desejado', sorted(df_esgoto['Município'].unique()))
-
-with coluna_grafico: 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    muni = st.selectbox('Selecione o Município desejado', sorted(df_esgoto['Município'].unique())) 
