@@ -61,6 +61,9 @@ df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
 with coluna_filtro: 
     muni = st.selectbox('Selecione o Município desejado', sorted(df_esgoto['Município'].unique()))
 
+with coluna_grafico: 
+    
+
 
 
 
