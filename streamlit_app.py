@@ -63,7 +63,7 @@ with coluna_filtro:
     muni = st.selectbox('Selecione o Município desejado', sorted(df_esgoto['Município'].unique()))
     st.write('Município selecionado:', muni)
     
-    filtro = df_esgoto['Município'] == option
+    filtro = df_esgoto['Município'] == muni
     df_esgoto_filtrado = df_esgoto[filtro]
 
 with coluna_filtro: 
