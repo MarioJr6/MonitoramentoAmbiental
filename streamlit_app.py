@@ -63,29 +63,29 @@ with coluna_filtro:
     muni = st.selectbox('Selecione o Município desejado', sorted(df_esgoto['Município'].unique()))
     st.write('Município selecionado:', muni)
     
-    filtro = df_esgoto['Município'] == muni
+    filtro = df_esgoto['Município']==muni
     df_esgoto_filtrado = df_esgoto[filtro]
 
-with coluna_filtro: 
+#with coluna_filtro: 
     # Subplot para mais de um eixo Y
-    fig = make_subplots(specs=[[{"secondary_y": True}]])
+    #fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     # Adicionando a linha ao gráfico fig
-    fig = fig.add_trace(
-          go.Scatter(x=grouped['DATA_SINTOMAS'], y=grouped[muni], name="Casos diários", mode="lines"),
-          secondary_y=True,
-          )
+    #fig = fig.add_trace(
+    #      go.Scatter(x=grouped['DATA_SINTOMAS'], y=grouped[muni], name="Casos diários", mode="lines"),
+    #      secondary_y=True,
+   #       )
     # Adicionando a barra ao gráfico fig
-    fig = fig.add_trace(
-          go.Bar(x=df_esgoto_filtrado['Data de coleta'], y=df_esgoto_filtrado['carga_viral_n1'], name="Carga Viral no esgoto"),
-          secondary_y=False,
-          )
+   # fig = fig.add_trace(
+    #      go.Bar(x=df_esgoto_filtrado['Data de coleta'], y=df_esgoto_filtrado['carga_viral_n1'], name="Carga Viral no esgoto"),
+    #      secondary_y=False,
+    #      )
     
     # Ajustando os eixos para começarem juntos
-    fig.update_yaxes(title_text="Carga viral", secondary_y=False, range=[0,df_esgoto['carga_viral_n1'].max()*1.2])
-    fig.update_yaxes(title_text="Casos diários", secondary_y=True, range=[0,grouped[muni].max()*1.2])
+    #fig.update_yaxes(title_text="Carga viral", secondary_y=False, range=[0,df_esgoto['carga_viral_n1'].max()*1.2])
+    #fig.update_yaxes(title_text="Casos diários", secondary_y=True, range=[0,grouped[muni].max()*1.2])
 
-    fig
+    #fig
     
 
 
