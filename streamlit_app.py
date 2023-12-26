@@ -43,7 +43,7 @@ grouped = grouped[colunas]
 # Realizando o meu filtro temporal
 grouped = grouped[grouped['DATA_SINTOMAS']>='2023-01-01']
 
-grouped
+# grouped
 
 
 
