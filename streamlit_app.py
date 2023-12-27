@@ -28,11 +28,21 @@ df_esgoto['Data de coleta']=pd.to_datetime(df_esgoto['Data de coleta'], format='
 df_esgoto=df_esgoto[df_esgoto['Data de coleta']>='2023-01-01']
 df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
 
+fig = make_subplots(specs=[[{"secondary_y": True}]])
+
 with coluna_filtro: 
     municipio = st.selectbox('Selecione o município',muni)
 
+    filtro = df_esgoto['Município']==municipio
+    df_esgoto_filtrado = df_esgoto[filtro]
+
 with coluna_grafico: 
-    df_esgoto
+    fig.add_trace(
+      go.Bar(x=df_esgoto_filtrado['Data de coleta'], y=df_esgoto_filtrado['carga_viral_n1'], name="Carga Viral no esgoto",
+             ),
+      secondary_y=False,
+  )
+
     
 
     
