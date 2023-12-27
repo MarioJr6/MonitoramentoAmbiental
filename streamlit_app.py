@@ -23,10 +23,10 @@ coluna_filtro, coluna_grafico = st.columns([1,2])
 df_esgoto = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vTZfjxdY8_x5WNd9_NE3QQPeche-dMdY5KdvNpq8H4W-lmUTidwrKpV0uLzLtihV7UAPIl68WvugMsN/pub?gid=0&single=true&output=tsv')
 
 with coluna_filtro: 
-    muni=st.selectbox('Selecione o município', sorted(df_esgoto['Município'].unique()))
+    #muni=st.selectbox('Selecione o município', sorted(df_esgoto['Município'].unique()))
 
-filtro=df_esgoto['Município']==muni
-df_esgoto_filtrado=df_esgoto[filtro]
+#filtro=df_esgoto['Município']==muni
+#df_esgoto_filtrado=df_esgoto[filtro]
 
 with coluna_grafico: 
     df_esgoto
