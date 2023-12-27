@@ -21,11 +21,12 @@ col3.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20
 coluna_filtro, coluna_grafico = st.columns([1,2])
 
 # Leitura dos dados
-# df_casos = pd.read_csv('https://ti.saude.rs.gov.br/covid19/download', encoding="UTF-8", sep=";")
+df_casos = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vSB6M4e3McfIwkph-nzq_SefdhzGx_6ycMmj8SHTzcXYrkUMe1P7Nza6BpKPva_HUhpDXBgwKXrHREx/pub?output=tsv')
 df_esgoto = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vTZfjxdY8_x5WNd9_NE3QQPeche-dMdY5KdvNpq8H4W-lmUTidwrKpV0uLzLtihV7UAPIl68WvugMsN/pub?gid=0&single=true&output=tsv')
 
 
 with coluna_filtro: 
     df_esgoto
+    df_casos
 
     
