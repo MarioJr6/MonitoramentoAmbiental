@@ -25,19 +25,19 @@ df_esgoto = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vTZfj
 df_casos = pd.read_csv('https://ti.saude.rs.gov.br/covid19/download', encoding="UTF-8", sep=";")
 
 # Formatando para o tipo data as colunas data de sintomas e confirmacao
-df_casos['DATA_SINTOMAS']=pd.to_datetime(df_casos['DATA_SINTOMAS'], format='%d/%m/%Y')
-df_casos['DATA_CONFIRMACAO']=pd.to_datetime(df_casos['DATA_CONFIRMACAO'], format='%d/%m/%Y')
+#df_casos['DATA_SINTOMAS']=pd.to_datetime(df_casos['DATA_SINTOMAS'], format='%d/%m/%Y')
+#df_casos['DATA_CONFIRMACAO']=pd.to_datetime(df_casos['DATA_CONFIRMACAO'], format='%d/%m/%Y')
 
 # Agrupando os dados para eu possuir todas as data do ano
-grouped = pd.pivot_table(data=df_casos, index='DATA_SINTOMAS', columns='MUNICIPIO', values='CRITERIO', aggfunc='count').fillna(0).reset_index()
+#grouped = pd.pivot_table(data=df_casos, index='DATA_SINTOMAS', columns='MUNICIPIO', values='CRITERIO', aggfunc='count').fillna(0).reset_index()
 
 # Lista das colunas que desejo trabalhar
-colunas = ['DATA_SINTOMAS', 'CAPÃO DA CANOA', 'CAXIAS DO SUL', 'PASSO FUNDO',
-           'SANTA MARIA', 'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
+#colunas = ['DATA_SINTOMAS', 'CAPÃO DA CANOA', 'CAXIAS DO SUL', 'PASSO FUNDO',
+#           'SANTA MARIA', 'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
 
 # Filtro das colunas que desejo manter e da minha linha temporal
-grouped = grouped[colunas]
-grouped = grouped[grouped['DATA_SINTOMAS']>='2023-01-01']
+#grouped = grouped[colunas]
+#grouped = grouped[grouped['DATA_SINTOMAS']>='2023-01-01']
 
 # Lista para selectbox
 muni = ['CAPÃO DA CANOA', 'CAXIAS DO SUL', 'PASSO FUNDO','SANTA MARIA', 'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
@@ -57,10 +57,10 @@ with coluna_filtro:
     df_esgoto_filtrado = df_esgoto[filtro]
 
 with coluna_grafico:
-    fig = fig.add_trace(
-      go.Scatter(x=grouped['DATA_SINTOMAS'], y=grouped[municipio], name="Casos diários", mode="lines"),
-      secondary_y=True,
-  )
+#    fig = fig.add_trace(
+#      go.Scatter(x=grouped['DATA_SINTOMAS'], y=grouped[municipio], name="Casos diários", mode="lines"),
+#      secondary_y=True,
+#  )
 
     fig = fig.add_trace(
       go.Bar(x=df_esgoto_filtrado['Data de coleta'], y=df_esgoto_filtrado['carga_viral_n1'], name="Carga Viral no esgoto",
