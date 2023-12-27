@@ -18,7 +18,7 @@ col1.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20
 col2.title('Painel de Monitoramento Ambiental de SARS-CoV-2')
 col3.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20Estado.png?raw=true', width=300)
 
-coluna_filtro, coluna_grafico = st.columns([1,1])
+coluna_filtro, coluna_grafico = st.columns([2,1])
 
 # Leitura dos dados
 df_casos = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vSB6M4e3McfIwkph-nzq_SefdhzGx_6ycMmj8SHTzcXYrkUMe1P7Nza6BpKPva_HUhpDXBgwKXrHREx/pub?output=tsv')
