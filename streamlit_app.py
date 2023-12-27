@@ -21,8 +21,12 @@ col3.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20
 coluna_filtro, coluna_grafico = st.columns([1,2])
 
 df_esgoto = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vTZfjxdY8_x5WNd9_NE3QQPeche-dMdY5KdvNpq8H4W-lmUTidwrKpV0uLzLtihV7UAPIl68WvugMsN/pub?gid=0&single=true&output=tsv')
-dados = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vSdSfuuSRSruaUrc7zpPqWzbPBeTKDGB-Y5xgfIhZND_gityoaYJp-_ja_P5hBBKyFbHA_5y70zPRpt/pub?gid=1357651511&single=true&output=tsv')
+# dados = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vSdSfuuSRSruaUrc7zpPqWzbPBeTKDGB-Y5xgfIhZND_gityoaYJp-_ja_P5hBBKyFbHA_5y70zPRpt/pub?gid=1357651511&single=true&output=tsv')
+
+muni = ['DATA_SINTOMAS', 'CAPÃO DA CANOA', 'CAXIAS DO SUL', 'PASSO FUNDO',
+           'SANTA MARIA', 'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
 
 with coluna_filtro: 
-   # municipio = st.selectbox('Selecione o município', )
-   municipio = st.selectbox('Selecione o município', sorted(dados['Município da Unidade Sentinela'].unique()))
+    municipio = st.selectbox('Selecione o município',muni)
+    
+   # municipio = st.selectbox('Selecione o município', sorted(dados['Município da Unidade Sentinela'].unique()))
