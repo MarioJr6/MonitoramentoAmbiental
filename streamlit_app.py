@@ -54,7 +54,7 @@ with coluna_grafico:
       )
     
     fig.update_yaxes(title_text="Carga viral", secondary_y=False, range=[0,df_esgoto['carga_viral_n1'].max()*1.2])
-    fig.update_yaxes(title_text="Casos diários", secondary_y=True, range=[0,grouped['CAPÃO DA CANOA'].max()*1.2])
+    fig.update_yaxes(title_text="Casos diários", secondary_y=True, range=[0,df_casos[muni].max()*1.2])
     
     fig
 
