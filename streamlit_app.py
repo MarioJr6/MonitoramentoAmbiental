@@ -22,7 +22,7 @@ coluna_filtro, coluna_grafico = st.columns([1,2])
 
 # Leitura dos dados
 df_esgoto = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vTZfjxdY8_x5WNd9_NE3QQPeche-dMdY5KdvNpq8H4W-lmUTidwrKpV0uLzLtihV7UAPIl68WvugMsN/pub?gid=0&single=true&output=tsv')
-df_casos = pd.read_csv('https://ti.saude.rs.gov.br/covid19/download', encoding="UTF-8", sep=";")
+# df_casos = pd.read_csv('https://ti.saude.rs.gov.br/covid19/download', encoding="UTF-8", sep=";")
 
 # Formatando para o tipo data as colunas data de sintomas e confirmacao
 #df_casos['DATA_SINTOMAS']=pd.to_datetime(df_casos['DATA_SINTOMAS'], format='%d/%m/%Y')
