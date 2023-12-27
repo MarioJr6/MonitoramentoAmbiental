@@ -43,6 +43,7 @@ with coluna_grafico:
       secondary_y=False,
   )
 
+    fig
     
 
     
