@@ -43,7 +43,7 @@ with coluna_filtro:
 
 with coluna_grafico: 
     fig = fig.add_trace(
-      go.Scatter(x=grouped['DATA_SINTOMAS'], y=grouped[muni], name="Casos diários", mode="lines"),
+      go.Scatter(x=df_casos['DATA_SINTOMAS'], y=df_casos[muni], name="Casos diários", mode="lines"),
       secondary_y=True,
   )
 
