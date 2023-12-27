@@ -28,5 +28,7 @@ df_esgoto = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vTZfj
 with coluna_filtro: 
     df_esgoto
     df_casos
-
+    
+with coluna_grafico: 
+    
     
