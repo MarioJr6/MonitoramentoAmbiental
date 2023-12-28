@@ -55,10 +55,9 @@ with coluna_grafico:
     fig.update_yaxes(title_text="Casos diários", secondary_y=True, range=[0,df_casos[muni].max()*1.2])
 
     # Atualize o layout do gráfico para ocupar toda a largura disponível
-    fig.update_layout(
-        autosize=True,  # Para ajustar automaticamente ao espaço disponível
-        width=coluna_grafico.width,  # Define a largura para a largura da coluna_grafico
-        height=300  # Define a altura do gráfico (pode ajustar conforme necessário)
+      fig.update_layout(
+        width=800,  # Definir uma largura fixa
+        height=500,  # Definir uma altura fixa
     )
-    fig
+    st.plotly_chart(fig) 
    
