@@ -7,23 +7,39 @@ import streamlit as st
 
 # Configurações da página, padrão para os dashs do setor
 st.set_page_config(
-    page_title="Demo Mario",
+    page_title="Painel de Monitoramento Ambiental de SARS-CoV-2",
     page_icon="	:snake:",
     layout="wide",
     initial_sidebar_state='collapsed'
 )
 col1, col2, col3 = st.columns([1,4,1])
-
 col1.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20CEVS.png?raw=true', width=200)
 col2.title('Painel de Monitoramento Ambiental de SARS-CoV-2')
 col3.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20Estado.png?raw=true', width=300)
+
+kpi1, kpi2, kpi3 = st.columns(3)
+
+kpi1.metric(
+    label="Age ⏳",
+    
+)
+
+kpi2.metric(
+    label="Married Count 💍",
+ 
+)
+
+kpi3.metric(
+    label="A/C Balance ＄",
+   
+)
+
 
 coluna_filtro, coluna_grafico = st.columns([0.8,5])
 
 # Leitura dos dados
 df_casos = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vSB6M4e3McfIwkph-nzq_SefdhzGx_6ycMmj8SHTzcXYrkUMe1P7Nza6BpKPva_HUhpDXBgwKXrHREx/pub?output=tsv')
 df_esgoto = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vTZfjxdY8_x5WNd9_NE3QQPeche-dMdY5KdvNpq8H4W-lmUTidwrKpV0uLzLtihV7UAPIl68WvugMsN/pub?gid=0&single=true&output=tsv')
-
 
 municipio = ['CAPÃO DA CANOA', 'CAXIAS DO SUL', 'PASSO FUNDO', 'SANTA MARIA', 'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
 
@@ -32,7 +48,6 @@ df_esgoto=df_esgoto[df_esgoto['Data de coleta']>='2023-01-01']
 df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
 
 fig = make_subplots(specs=[[{"secondary_y": True}]])
-
 
 with coluna_filtro: 
     muni = st.selectbox('Selecione o município', municipio)
@@ -60,11 +75,3 @@ with coluna_grafico:
         height=700,  # Definir uma altura fixa
     )
     st.plotly_chart(fig) 
-
-    
-
-
-
-
-
-   
