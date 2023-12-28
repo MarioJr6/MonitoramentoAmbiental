@@ -60,5 +60,5 @@ with coluna_grafico:
         width=coluna_grafico.width,  # Define a largura para a largura da coluna_grafico
         height=500  # Define a altura do gráfico (pode ajustar conforme necessário)
     )
-    st.plotly_chart(fig)  # Mostra o gráfico no Streamlit
+    fig
    
