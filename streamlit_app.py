@@ -17,24 +17,6 @@ col1.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20
 col2.title('Painel de Monitoramento Ambiental de SARS-CoV-2')
 col3.image('https://github.com/MarioJr6/MonitoramentoAmbiental/blob/main/Logo%20Estado.png?raw=true', width=300)
 
-kpi1, kpi2, kpi3 = st.columns(3)
-
-kpi1.metric(
-    label="Age ⏳",
-    
-)
-
-kpi2.metric(
-    label="Married Count 💍",
- 
-)
-
-kpi3.metric(
-    label="A/C Balance ＄",
-   
-)
-
-
 coluna_filtro, coluna_grafico = st.columns([0.8,5])
 
 # Leitura dos dados
