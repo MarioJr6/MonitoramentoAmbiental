@@ -56,7 +56,7 @@ with coluna_grafico:
 
     # Atualize o layout do gráfico para ocupar toda a largura disponível
     fig.update_layout(
-        width=800,  # Definir uma largura fixa
+        width=2000,  # Definir uma largura fixa
         height=500,  # Definir uma altura fixa
     )
     st.plotly_chart(fig) 
