@@ -58,7 +58,7 @@ with coluna_grafico:
     fig.update_layout(
         autosize=True,  # Para ajustar automaticamente ao espaço disponível
         width=coluna_grafico.width,  # Define a largura para a largura da coluna_grafico
-        height=500  # Define a altura do gráfico (pode ajustar conforme necessário)
+        height=300  # Define a altura do gráfico (pode ajustar conforme necessário)
     )
     fig
    
