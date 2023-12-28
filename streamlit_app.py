@@ -41,6 +41,7 @@ with coluna_filtro:
 with coluna_grafico: 
     fig = fig.add_trace(
       go.Scatter(x=df_casos['DATA_SINTOMAS'], y=df_casos[muni], name="Casos diários", mode="lines"),
+      fill='tozeroy',
       secondary_y=True,
   )
     fig = fig.add_trace(
