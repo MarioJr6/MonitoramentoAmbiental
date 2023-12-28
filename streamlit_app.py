@@ -55,7 +55,7 @@ with coluna_grafico:
     fig.update_yaxes(title_text="Casos diários", secondary_y=True, range=[0,df_casos[muni].max()*1.2])
 
     # Atualize o layout do gráfico para ocupar toda a largura disponível
-      fig.update_layout(
+    fig.update_layout(
         width=800,  # Definir uma largura fixa
         height=500,  # Definir uma altura fixa
     )
