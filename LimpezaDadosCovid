@@ -10,8 +10,10 @@ df_casos['DATA_CONFIRMACAO']=pd.to_datetime(df_casos['DATA_CONFIRMACAO'], format
 grouped = pd.pivot_table(data=df_casos, index='DATA_SINTOMAS', columns='MUNICIPIO', values='CRITERIO', aggfunc='count').fillna(0).reset_index()
 
 # Mantendo somente as colunas que desejo trabalhar
+# Retirei São Leopoldo pois o mesmo não possui coletas realizadas em 2023
+
 colunas = ['DATA_SINTOMAS', 'CAPÃO DA CANOA', 'CAXIAS DO SUL', 'PASSO FUNDO',
-           'SANTA MARIA', 'SANTA ROSA', 'SÃO LEOPOLDO', 'TORRES']
+           'SANTA MARIA', 'SANTA ROSA', 'TORRES']
 grouped = grouped[colunas]
 
 # Realizando meu filtro temporal
