@@ -40,7 +40,7 @@ df_esgoto['Data de coleta'] = pd.to_datetime(df_esgoto['Data de coleta'], format
 # Filtrando para o período selecionado
 df_esgoto = df_esgoto[df_esgoto['Data de coleta']>='2023-01-01']
 # Transformando a a coluna carga viral para o tipo float
-#df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
+df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
 
 # Definindo subplots (gráficos secundários) 
 fig = make_subplots(specs=[[{"secondary_y": True}]])
@@ -82,7 +82,7 @@ with container_2:
     lista = df_esgoto2['Data de coleta'].tolist()
 
     # Alterando o tipo de dado da coluna
-    df_esgoto_filtrado['carga_viral_n1'] = df_esgoto_filtrado['carga_viral_n1'].astype(int)
+    # df_esgoto_filtrado['carga_viral_n1'] = df_esgoto_filtrado['carga_viral_n1'].astype(int)
 
     # Métricas para as informações desejadas no painel, distribuidas nas colunas estabelecidas
     col2.metric(label = "Casos de COVID 19 confirmados nos últimos 7 dias", 
