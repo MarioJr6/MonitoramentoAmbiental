@@ -40,7 +40,7 @@ df_esgoto['Data de coleta'] = pd.to_datetime(df_esgoto['Data de coleta'], format
 # Filtrando para o período selecionado
 df_esgoto = df_esgoto[df_esgoto['Data de coleta']>='2023-01-01']
 # Transformando a a coluna carga viral para o tipo float
-df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
+#df_esgoto['carga_viral_n1'] = df_esgoto['carga_viral_n1'].astype(float)
 
 # Definindo subplots (gráficos secundários) 
 fig = make_subplots(specs=[[{"secondary_y": True}]])
@@ -120,6 +120,8 @@ with container_2:
         width=1250,  # Definir uma largura fixa
         height=560,  # Definir uma altura fixa
     )
+
+    col1.plotly_chart(fig)
 
 
 
