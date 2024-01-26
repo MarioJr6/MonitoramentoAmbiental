@@ -22,7 +22,7 @@ def fetch_and_clean_data(url):
            'SANTA MARIA', 'SANTA ROSA', 'TORRES']
   grouped = grouped[colunas]
 
-    return grouped
+  return grouped
 
 d1 = fetch_and_clean_data('https://ti.saude.rs.gov.br/covid19/download?2023')
 
